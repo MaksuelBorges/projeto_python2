@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Entrar{% endblock title %}
+{% block content %}
+{% load static %}
+
+<main class="w-100 m-auto container py-5 mt-5">
+    <form method="POST">
+        {% csrf_token %}
+        <img src="{% static 'petblog.png' %}" class="mb-4" height="57" width="70">
+        <h1 class="h3 mb-3 fw-normal">Entrar</h1>
+        <div class="form-floating">
+            <input type="email" class="form-control" id="username" placeholder="Exmplo-email@gmail.com" />
+            <label for="username"> E-mail</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" placeholder="Senha" />
+            <label for="password"> Senha</label>
+        </div>
+
+        {% if incorrect_login %}
+        Incorrect username or password!
+        {% endif %}
+        
+        <div class="form-check text-start my-3">
+            <input type="checkbox" class="form-check-input" id="checkDefault" />
+            <label class="form-check-label" for="checkDefault"> Lembrar Senha</label>
+            <p class="text-end">Novo por aqui?<a href="/cadastro/" id="cadastroDefault">Cadastre agora!</a></p>
+        </div>
+
+        <button class=" btn btn-primary w-100 py-2">Entrar</button>
+    </form>
+</main>
+
+{% endblock content %}

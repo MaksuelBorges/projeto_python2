@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}Pet Blog{% endblock title %}
+{% block content %}
+{% csrf_token %}
+{% load static %}
+
+<main class="container mt-5">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active rounded" data-bs-interval="10000">
+                <a href="https://blog.tudodebicho.com.br/cachorro/cachorro-com-diarreia/">
+                <img src="{% static 'diarreia.png' %}" class="mx-auto d-block rounded img-fluid img-thumbnail w-50">
+                </a>
+                <div class="carousel-caption rounded d-none d-md-block">
+                    <h5><strong>Cachorro com diarreia</strong></h5>
+                    <p><strong>Causas, sintomas e tratamentos</strong></p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <a href="https://blog.tudodebicho.com.br/gato/gestacao-de-gato/">
+                <img src="{% static 'gatof.png' %}" class="mx-auto d-block rounded img-fluid img-thumbnail w-50"
+                    alt="...">
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><strong>Gestação de gato</strong></h5>
+                    <p><strong>Conheça as principais dúvidas sobre o tema</strong></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="https://blog.tudodebicho.com.br/passaro/cacatua/">
+                <img src="{% static 'cacatuaf.jpg' %}" class="mx-auto d-block rounded img-fluid img-thumbnail w-50"
+                    alt="...">
+                    </a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><strong>Como cuidar de uma cacatua de estimação?</strong></h5>
+                    <p><strong>Socializar perfeitamente com humanos</strong></p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="row bg-light m-3 border p-3 mt-5">
+        <div class="row align-items-center">
+            <div>
+                <div class="container text-center">
+                    <figure class="figure">
+                        <h5 class="text-start p-1">Cachorro com diarreia: causas, sintomas e tratamentos</h5>
+                        <img src="{% static 'dogsad.png' %}" width="180px"
+                            class="img-trumbnail float-start rounded me-3">
+                        <p class="lead text-start">Ter um cãozinho em casa é ter o ambiente tomado por uma
+                            constante alegria, mas também
+                            uma enorme
+                            responsabilidade. Quem cuida de um pet sabe que, mais cedo ou mais tarde, terá que lidar com
+                            o
+                            cachorro com diarreia, aquele cocô mole e mais fedido. As causas dessa situação podem ser
+                            variadas, desde uma pequena mudança na dieta até casos mais
+                            sérios, como infecções, parasitas, alergias, estresse ou vermes.
+                            As causas dessa situação podem ser variadas, desde uma pequena mudança na dieta até casos
+                            mais
+                            sérios, como infecções, parasitas, alergias, estresse ou vermes. </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-end">
+            <p>21/02/2024</p>
+        </div>
+    </div>
+    <div class="row bg-light m-3 border p-3">
+        <div class="row align-items-center">
+            <div>
+                <div class="container text-center">
+                    <figure class="figure">
+                        <h5 class="text-end p-1">Gestação de gato: conheça as principais dúvidas sobre o tema</h5>
+                        <img src="{% static 'gato2.png' %}" width="250px" class="img-trumbnail float-end rounded">
+                        <p class="lead text-end me-3">A gestação de gatos é um tema que gera muitas dúvidas, afinal,
+                            quantas ninhadas uma gatinha pode ter ao longo da vida, qual é o período de para os filhotes
+                            nascerem ou como saber se ela está esperando crias? Neste post, responderemos essas e outras
+                            perguntas sobre esse assunto tão importante para os papais e mamães de felinos. A castração
+                            pode evitar doenças de transmissão sexual, melhorar o comportamento, prolongar a vida e
+                            prevenir o aparecimento de filhotes indesejados. Outro aspecto positivo é a redução do
+                            comportamento territorial e agressivo.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-end">
+            <p>10/02/2024</p>
+        </div>
+    </div>
+    <div class="row bg-light m-3 border p-3">
+        <div class="row align-items-center">
+            <div>
+                <div class="container text-center">
+                    <figure class="figure">
+                        <h5 class="text-start p-1">Como cuidar de uma cacatua de estimação?</h5>
+                        <img src="{% static 'cacatua.png' %}" width="180px"
+                            class="img-trumbnail float-start rounded me-3">
+                        <p class="lead text-start">Ter uma cacatua de estimação é ter a certeza de uma companheira para
+                            a vida toda, já que esses animaizinhos podem viver até os 80 anos de idade! Para isso, são
+                            necessários inúmeros cuidados com a qualidade de vida desse pássaro.
+
+                            Com penas grandes e belas e um topete muito característico, as cacatuas são
+                            inteligentíssimas e podem socializar perfeitamente com humanos e outros animais, criando um
+                            forte vínculo de amizade e dependência, principalmente com o tutor favorito. Se você
+                            pretende comprar uma cacatua, é importante entender que se trata de um animal silvestre, que
+                            vai exigir cuidados especiais além da alimentação e da higiene. </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-end">
+            <p>08/02/2024</p>
+        </div>
+    </div>
+    <div class="row bg-light m-3 border p-3">
+        <div class="row align-items-center">
+            <div>
+                <div class="container text-center">
+                    <figure class="figure">
+                        <h5 class="text-end p-1">Montando um cercadinho para porquinho-da-índia</h5>
+                        <img src="{% static 'porquinho.png' %}" width="250px" class="img-trumbnail float-end rounded">
+                        <p class="lead text-end me-3">O cercadinho é um dos itens mais importante para o
+                            porquinho-da-índia, é um espaço onde eles passam a maior parte do tempo. Por isso, é
+                            indispensável um ambiente confortável e que proporcione qualidade de vida para o pet.
+
+                            Um espaço grande e interativo contribui para a saúde e bem-estar do animal. Mesmo sendo um
+                            espaço delimitado é essencial que o roedor tenha uma área ampla em que possa circular à
+                            vontade.
+
+                            O tamanho do cercado é importante para que o porquinho-da-índia se sinta confortável para
+                            transitar livremente e ainda poder brincar e fazer suas necessidades fisiológicas. O
+                            cercadinho deve ter uma área ampla, adequada para a quantidade de animais que ficarão nele.
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-end">
+            <p>01/02/2024</p>
+        </div>
+    </div>
+</main>
+
+</html>
+{% endblock content %}

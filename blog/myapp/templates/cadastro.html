@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Cadastro{% endblock title %}
+{% block content %}
+{% load static %}
+
+<h2>Cadastro</h2>
+<hr>
+
+<form method="POST" class="row g-3 needs-validation mt-3" novalidate>
+    {% csrf_token %}
+    <div class="col-md-4">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" name="nome" placeholder="Seu nome" required>
+        <div class="valid-feedback">
+            Bom!
+        </div>
+    </div>
+    <div class="col-md-4">
+        <label for="sobrenome" class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" name="sobrenome" placeholder="Sobrenome" required>
+        <div class="valid-feedback">
+            Bom!
+        </div>
+    </div>
+    <div class="col-md-4">
+        <label for="cidade" class="form-label">Cidade</label>
+        <input type="text" class="form-control" name="cidade" placeholder="Sua cidade" required>
+        <div class="invalid-feedback">
+            Digite uma cidade valida.
+        </div>
+    </div>
+    <div class="col-md-4">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" name="email" placeholder="exemplo@gmail.com" required>
+        <div class="valid-feedback">
+            Valido
+        </div>
+        <div class="col-md-3">
+            <label for="estado" class="form-label">Estado</label>
+            <select class="form-select" name="estado" required>
+                <option selected disabled value="">Escolha...</option>
+                <option>AC</option>
+                <option>AL</option>
+                <option>AP</option>
+                <option>AM</option>
+                <option>BA</option>
+                <option>CE</option>
+                <option>DF</option>
+                <option>ES</option>
+                <option>GO</option>
+                <option>MA</option>
+                <option>MT</option>
+                <option>MS</option>
+                <option>MG</option>
+                <option>PA</option>
+                <option>PB</option>
+                <option>PR</option>
+                <option>PE</option>
+                <option>PI</option>
+                <option>RJ</option>
+                <option>RN</option>
+                <option>RS</option>
+                <option>RO</option>
+                <option>RR</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select a valid state.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="cep" class="form-label">CEP</label>
+            <input type="int" class="form-control" name="cep" placeholder="780258000" required>
+            <div class="invalid-feedback">
+                Please provide a valid zip.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" name="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Aceito os termos e quero continuar
+                </label>
+                <div class="invalid-feedback">
+                    Aceitar os termos primeiro.
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </div>
+</form>
+
+{% endblock content %}
